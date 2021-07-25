@@ -58,6 +58,9 @@ end
 
 function this = batch_one(this, inputFile, outputFolder, verbose, force)
     d = dir(inputFile);
+    if isempty(d) 
+        warning('There are no files matching: %s', inputFile);
+    end
     for j=1:numel(d)
         lineOutputFolder = fullfile(outputFolder,d(j).folder, d(j).name);
         mkdir(lineOutputFolder);
