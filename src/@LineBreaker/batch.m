@@ -63,7 +63,7 @@ function this = batch_one(this, inputFile,outputDir, verbose, force)
         mkdir(folder)
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
-                          folder,
+                          folder,...
                           d(j).name,...
                           verbose,...
                           force);
@@ -71,8 +71,6 @@ function this = batch_one(this, inputFile,outputDir, verbose, force)
 end
 
 function this = batch_single_file(this, inputFile, folder, outputFileName, verbose, force)
-    inputFile
-    outputFile
     this.CurrentFilepath = inputFile;
     this.binarizeCurrentImage;
     lines = this.ImageLines;
@@ -84,7 +82,7 @@ function this = batch_single_file(this, inputFile, folder, outputFileName, verbo
             if force
                 doWrite = true;
             else
-                warning('File %s exists, skipping.', outputFileName, j);
+                warning('File %s exists, skipping.', outputFile);
                 doWrite = false;
             end
         end
