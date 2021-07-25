@@ -51,23 +51,25 @@ function this = batch(this, inputFile, outputDir, varargin)
         inputFile = { inputFile }
     end
     for j=1:numel(inputFile)
-        this = batch_one(this, inputFile{j},outputDir);
+        this = batch_one(this, inputFile{j},outputDir,verbose,force);
     end
 end
 
 
-function this = batch_one(this, inputFile,outputDir)
+function this = batch_one(this, inputFile,outputDir, verbose, force)
     d = dir(inputFile);
     for j=1:numel(d)
         folder = fullfile(outputDir,d(j).folder)
         mkdir(folder)
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
-                          fullfile(sprintf('%s_line%03d.png',d(j).name)));
+                          fullfile(folder,sprintf('%s_line%03d.png',d(j).name)),...
+                          verbose,...
+                          force);
     end
 end
 
-function this = batch_single_file(this, inputFile, outputFile)
+function this = batch_single_file(this, inputFile, outputFile, verbose, force)
     inputFile
     outputFile
     this.CurrentFilepath = inputFile;
