@@ -9,7 +9,7 @@
 %----------------------------------------------------------------
 % Chinese
 preamble;
-inputFile = fullfile('..','..','images','38004.png');
+inputFile = fullfile('..','images','38004.png');
 outputDir = fullfile('.','Chars-38004-mono');
 ob = LineBreaker;
 ob.RelBoxExpansion = [0.15, 0.05];
