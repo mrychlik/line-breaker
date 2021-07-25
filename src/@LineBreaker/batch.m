@@ -48,7 +48,7 @@ function this = batch(this, inputFile, outputDir, varargin)
     this.OutputType = p.Results.OutputType;
     
     if ~iscell(inputFile)
-        inputFile = { inputFile }
+        inputFile = { inputFile };
     end
     for j=1:numel(inputFile)
         this = batch_one(this, inputFile{j},outputDir,verbose,force);
