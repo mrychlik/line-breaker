@@ -57,12 +57,22 @@ end
 
 
 function this = batch_one(this, inputFile,outputDir)
+    d = dir(inputFile);
+    for j=1:numel(d)
+        folder = fullfile(outputDir,d(j).folder);
+        mkdir(folder);
+        batch_single_file(this, d(j).name, folder);
+    end
+end
+
+function this = batch_single_file(this, inputFile,outputDir)
+
     this.CurrentFilepath = inputFile;
     this.binarizeCurrentImage;
     lines = this.ImageLines;
     disp("Lines in image: " + numel(lines));
     for j=1:numel(lines)
-        filepath = fullfile(outputDir,sprintf('%s_line%03d.png',inputFile,j));
+        filepath = fullfile(outputDir,sprintf('%s_line%03d.png',inputFile,j))
         doWrite = true;
         if exist(filepath,'file') == 2
             if force
