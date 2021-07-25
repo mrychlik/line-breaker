@@ -15,6 +15,7 @@ classdef LineBreaker < handle
         SmallSizeThreshold  = 10        % Min blob size (points^2) in text
         BinarizationThresh  = 0.2       % The parameter for binarization
         RelDiacriticExpansion  = [2 0]  % As fraction
+        RelBoxExpansion                 % As fraction, e.g. [-0.15 3]
         AbsDiacriticExpansion  = [6 0]  % As points
         BinarizationType    = 'FixedThreshold';  %The type for binarization 
         CurrentFilepath     = [] % The filepath of the image being processed
@@ -34,7 +35,6 @@ classdef LineBreaker < handle
         app = []                        % The GUI app
         filepath = []                   % File path
         outputTypeCached = 'Input'      % Cached value of OutputType
-        RelBoxExpansion                 % As fraction, e.g. [-0.15 3]
         AbsBoxExpansion                 % As points, e.g. [0, 0]   
     end
 
