@@ -63,13 +63,14 @@ function this = batch_one(this, inputFile,outputDir, verbose, force)
         mkdir(folder)
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
-                          fullfile(folder,sprintf('%s_line%03d.png',d(j).name)),...
+                          folder,
+                          d(j).name,...
                           verbose,...
                           force);
     end
 end
 
-function this = batch_single_file(this, inputFile, outputFile, verbose, force)
+function this = batch_single_file(this, inputFile, folder, outputFileName, verbose, force)
     inputFile
     outputFile
     this.CurrentFilepath = inputFile;
@@ -78,11 +79,12 @@ function this = batch_single_file(this, inputFile, outputFile, verbose, force)
     disp("Lines in image: " + numel(lines));
     for j=1:numel(lines)
         doWrite = true;
+        outputFile = fullfile(folder, sprintf('%s_line%03d.png',outputFileName));
         if exist(outputFile,'file') == 2
             if force
                 doWrite = true;
             else
-                warning('File %s exists, skipping.', outputFile);
+                warning('File %s exists, skipping.', outputFileName, j);
                 doWrite = false;
             end
         end
