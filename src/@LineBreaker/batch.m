@@ -51,12 +51,12 @@ function this = batch(this, inputFile, outputDir, varargin)
         inputFile = { inputFile }
     end
     for j=1:numel(inputFile)
-        this = batch_one(this, inputFile{j});
+        this = batch_one(this, inputFile{j},outputDir);
     end
 end
 
 
-function this = batch_one(this, inputFile)
+function this = batch_one(this, inputFile,outputDir)
     this.CurrentFilepath = inputFile;
     this.binarizeCurrentImage;
     lines = this.ImageLines;
