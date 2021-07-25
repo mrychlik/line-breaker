@@ -1,0 +1,6 @@
+function boxBounds = convertBox(bboxes)
+% Convert [x y width height] to the [xmin ymin xmax ymax]
+    boxBounds = [bboxes(:,1), bboxes(:,2),...
+                 bboxes(:,1) + bboxes(:,3) - 1, ...
+                 bboxes(:,2) + bboxes(:,4) - 1];
+end
