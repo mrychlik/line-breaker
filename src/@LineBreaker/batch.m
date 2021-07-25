@@ -56,7 +56,7 @@ function this = batch(this, inputFile, outputDir, varargin)
 end
 
 
-function this = batch_one(this, inputFile,outputDir, verbose, force)
+function this = batch_one(this, inputFile, lineOuputFolder, verbose, force)
     d = dir(inputFile);
     for j=1:numel(d)
         lineOuptutFolder = fullfile(outputDir,d(j).folder, d(j).name);
