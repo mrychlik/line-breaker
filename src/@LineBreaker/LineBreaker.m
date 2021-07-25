@@ -91,7 +91,6 @@ classdef LineBreaker < handle
             this.AbsBoxExpansion(2) = val;
         end
 
-
         function AdjBigSizeThreshold = get.AdjBigSizeThreshold(this)
             AdjBigSizeThreshold = round(this.BigSizeThreshold .* this.DotsPerPoint.^2);
         end
