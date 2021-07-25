@@ -61,7 +61,6 @@ function this = batch_one(this, inputFile,outputDir)
     for j=1:numel(d)
         folder = fullfile(outputDir,d(j).folder)
         mkdir(folder)
-        inFile = 
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
                           fullfile(sprintf('%s_line%03d.png',d(j).name)));
@@ -77,7 +76,7 @@ function this = batch_single_file(this, inputFile, outputFile)
     disp("Lines in image: " + numel(lines));
     for j=1:numel(lines)
         doWrite = true;
-        if exist(filepath,'file') == 2
+        if exist(outputFile,'file') == 2
             if force
                 doWrite = true;
             else
