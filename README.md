@@ -26,7 +26,7 @@ or in batch mode as a standalone, GUI-less executable.
 The application is natively written in MATLAB and therefore it can be extended
 by programming in MATLAB.
 
-## Standalone executable
+## Standalone executables for all major platforms
 For those without a MATLAB license we have executables produced with MATLAB.
 These executable utilize the full power of the MATLAB Runtime, which 
 is distributed by MathWorks for all major platforms.
