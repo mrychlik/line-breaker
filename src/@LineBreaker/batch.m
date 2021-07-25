@@ -56,11 +56,11 @@ function this = batch(this, inputFile, outputDir, varargin)
 end
 
 
-function this = batch_one(this, inputFile, lineOuputFolder, verbose, force)
+function this = batch_one(this, inputFile, outputFolder, verbose, force)
     d = dir(inputFile);
     for j=1:numel(d)
-        lineOuptutFolder = fullfile(outputDir,d(j).folder, d(j).name);
-        mkdir(lineOuputFolder);
+        lineOuptutFolder = fullfile(outpuFolder,d(j).folder, d(j).name);
+        mkdir(lineOutputFolder);
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
                           lineOutputFolder,...
