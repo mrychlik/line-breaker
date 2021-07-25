@@ -7,7 +7,11 @@
 % Copying:  (C) Marek Rychlik, 2020. All rights reserved.
 % 
 %----------------------------------------------------------------
-% Processing multiple files
+% Processing multiple files. As a demo, we process all images
+% supplied with the project, but the results will not be
+% good for all files, as the parameters must be tuned
+% for specific content.
+
 preamble;
 inputFile = fullfile('..','images','*.png');
 outputDir = fullfile('.','All-Images');
