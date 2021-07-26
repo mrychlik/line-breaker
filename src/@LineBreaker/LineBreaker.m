@@ -28,8 +28,8 @@ classdef LineBreaker < handle
         OverlapThreshold     = 0.2      % Overlap > this => merge
         MaxDiacriticSize     = [7,7]    % Max. size of a diacritic: [y,x]
         MinLineHeight        = 12       % Min. height of a line
-        Force                           % Force destructive file operations
-        Verbose                         % Be verbose
+        Force                = false    % Force destructive file operations
+        Verbose              = false    % Be verbose
     end
     
     properties(Access = private)
