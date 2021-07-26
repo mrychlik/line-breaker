@@ -67,7 +67,7 @@ function this = batch_single_file(this, inputFile, lineOuputFolder)
         doWrite = true;
         outputFile = fullfile(lineOuputFolder, sprintf('line%03d.png',j));
         if exist(outputFile,'file') == 2
-            if force
+            if this.Force
                 doWrite = true;
             else
                 warning('File %s exists, skipping.', outputFile);
@@ -76,7 +76,7 @@ function this = batch_single_file(this, inputFile, lineOuputFolder)
         end
         if doWrite
             imwrite(lines{j},outputFile,'PNG'),
-            if verbose
+            if this.Verbose
                 disp("File " + outputFile + " was written.");
             end
         end
