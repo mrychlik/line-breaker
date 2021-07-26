@@ -41,10 +41,12 @@ is a 2.5GB download, and thus will take time.
   
 ## Two variants of the software - GUI and command line
 
+### The GUI variant
 The GUI application called *LineBreakerApp* launches a GUI which will allow
 breaking up scanned page interactively. In the process, the best parameters
 for the particular content are discovered.
 
+### The command-line variant
 The non-GUI application called simply *LineBreaker* runs from command line
 and it will typically be used to process a large number of input files
 in batch (non-interactive) mode. Examples of batch processing can be found
