@@ -4,8 +4,6 @@ function this = batch(this, inputFile, outputDir)
 %  filename INPUTFILE and output folder OUTPUTDIR, both character
 %  vectors, and a number of options, and creates images with individual lines
 %  of text in the folder.
-%     This function is suitable for creating a standalone executable
-%  implementing LineBreaker functionality.
     if ~exist(outputDir,'dir')
         if force
             mkdir(outputDir);
