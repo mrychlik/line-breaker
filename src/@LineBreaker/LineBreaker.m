@@ -121,6 +121,10 @@ classdef LineBreaker < handle
 
     methods
         function this = LineBreaker(varargin)
+            configure(varargin{:});
+        end
+        
+        function configure(this, varargin)
             p = inputParser;
             p.addOptional('app',[],@(x)isempty(x)||isa(x,'LineBreakerApp'));
             p.addParameter('AbsHorExpansion',0,@isscalar);
