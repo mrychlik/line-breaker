@@ -39,12 +39,12 @@ function this = batch(this, inputFile, outputDir, varargin)
         inputFile = { inputFile };
     end
     for j=1:numel(inputFile)
-        this = batch_one(this, inputFile{j},outputDir,verbose,force);
+        this = batch_one(this, inputFile{j},outputDir);
     end
 end
 
 
-function this = batch_one(this, inputFile, outputFolder, verbose, force)
+function this = batch_one(this, inputFile, outputFolder)
     d = dir(inputFile);
     if isempty(d) 
         warning('There are no files matching: %s', inputFile);
@@ -54,13 +54,11 @@ function this = batch_one(this, inputFile, outputFolder, verbose, force)
         mkdir(lineOutputFolder);
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
-                          lineOutputFolder,...
-                          verbose,...
-                          force);
+                          lineOutputFolder);
     end
 end
 
-function this = batch_single_file(this, inputFile, lineOuputFolder, verbose, force)
+function this = batch_single_file(this, inputFile, lineOuputFolder)
     this.CurrentFilepath = inputFile;
     this.binarizeCurrentImage;
     lines = this.ImageLines;
