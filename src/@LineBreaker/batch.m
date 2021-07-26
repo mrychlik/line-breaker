@@ -11,25 +11,28 @@ function this = batch(this, inputFile, outputDir, varargin)
     p.addRequired('outputDir',@ischar);
     p.addParameter('Force',false,@(x)islogical(x)||ischar(x));
     p.addParameter('Verbose',false,@(x)islogical(x)||ischar(x));
-    p.addParameter('DotsPerPoint',[],@(x)isempty(x)||isscalar(x)||ischar(x));
     defaultOutputType = 'Input';
     expectedOutputTypes = {'Input','Binarized'};
     p.addParameter('OutputType',defaultOutputType,...
                    @(x) any(validatestring(x, expectedOutputTypes)));    
     p.parse(inputFile,outputDir, varargin{:});
     
-    force = p.Results.Force;
-    verbose = p.Results.Verbose;
-    dotsPerPoint = p.Results.DotsPerPoint;
-    if isdeployed
-        if ischar(force)
-            force = str2num(force);
-        end
-        if ischar(verbose)
-            verbose = str2num(verbose);
-        end
-        if ischar(dotsPerPoint)
-            dotsPerPoint = str2num(dotsPerPoint);
+    configure(this,varargin{:});
+
+    if false
+        force = p.Results.Force;
+        verbose = p.Results.Verbose;
+        dotsPerPoint = p.Results.DotsPerPoint;
+        if isdeployed
+            if ischar(force)
+                force = str2num(force);
+            end
+            if ischar(verbose)
+                verbose = str2num(verbose);
+            end
+            if ischar(dotsPerPoint)
+                dotsPerPoint = str2num(dotsPerPoint);
+            end
         end
     end
 
@@ -42,10 +45,6 @@ function this = batch(this, inputFile, outputDir, varargin)
                   outputDir);
         end
     end
-    if ~isempty(dotsPerPoint)
-        this.DotsPerPoint = dotsPerPoint;
-    end
-    this.OutputType = p.Results.OutputType;
     
     if ~iscell(inputFile)
         inputFile = { inputFile };
