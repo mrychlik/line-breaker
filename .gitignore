@@ -1,3 +1,10 @@
 TAGS
 *~
 tests/*/*
+src/LineBreaker/PackagingLog.html
+src/LineBreaker/for_redistribution_files_only/
+src/LineBreaker/for_testing/
+src/LineBreakerApp.prj
+src/LineBreakerApp/PackagingLog.html
+src/LineBreakerApp/for_redistribution_files_only/
+src/LineBreakerApp/for_testing/
