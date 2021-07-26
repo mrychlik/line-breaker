@@ -60,6 +60,7 @@ on my Linux machine will process all images with extension '.png' included into 
 and will place the results in the folder /tmp/Lines (deeply nested, to avoid name conflicts!).
 The option 'Force' is set to 'true' to allow overwriting files that have already been created.
 Furter options may be provided.
+
 [TODO: Describe all options that can be provided]
 
  
