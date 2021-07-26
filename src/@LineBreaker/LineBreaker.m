@@ -163,6 +163,8 @@ classdef LineBreaker < handle
             this.BinarizationType = p.Results.BinarizationType;
             this.BigSizeThreshold = p.Results.BigSizeThreshold;
             this.OutputType = p.Results.OutputType;
+            this.Force = p.Results.Force;
+            this.Verbose= p.Results.Verbose;
         end
 
         function appDataPath = get.appDataPath(this)
