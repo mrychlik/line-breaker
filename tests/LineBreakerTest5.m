@@ -11,7 +11,7 @@
 preamble;
 inputFile = fullfile('..','images','sinat-074.png');
 outputDir = fullfile('.','Lines-sinat-074');
-ob = LineBreaker;
+ob = LineBreaker('Force',true,'Verbose',true);
 ob.SmallSizeThreshold = 10;
-ob.batch(inputFile,outputDir,'Force',true,'Verbose',true);
+ob.batch(inputFile,outputDir);
 
