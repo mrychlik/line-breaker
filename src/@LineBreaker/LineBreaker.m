@@ -127,6 +127,7 @@ classdef LineBreaker < handle
         function configure(this, varargin)
             p = inputParser;
             p.addOptional('app',[],@(x)isempty(x)||isa(x,'LineBreakerApp'));
+            p.addParameter('DotsPerPoint',0,@isscalar);
             p.addParameter('AbsHorExpansion',0,@isscalar);
             p.addParameter('AbsVertExpansion',0,@isscalar);
             p.addParameter('RelHorExpansion',3,@isscalar);
