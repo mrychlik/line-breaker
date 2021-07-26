@@ -6,18 +6,7 @@ function this = batch(this, inputFile, outputDir, varargin)
 %  of text in the folder.
 %     This function is suitable for creating a standalone executable
 %  implementing LineBreaker functionality.
-    p = inputParser;
-    p.addRequired('inputFile',@ischar);
-    p.addRequired('outputDir',@ischar);
-    p.addParameter('Force',false,@(x)islogical(x)||ischar(x));
-    p.addParameter('Verbose',false,@(x)islogical(x)||ischar(x));
-    defaultOutputType = 'Input';
-    expectedOutputTypes = {'Input','Binarized'};
-    p.addParameter('OutputType',defaultOutputType,...
-                   @(x) any(validatestring(x, expectedOutputTypes)));    
-    p.parse(inputFile,outputDir, varargin{:});
-    
-    configure(this,varargin{:});
+    configure(this,'app',[],varargin{:});
 
     if false
         force = p.Results.Force;
