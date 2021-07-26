@@ -18,10 +18,10 @@ ob.BigSizeThreshold = 1;
 ob.SmallSizeThreshold = 1;
 ob.BinarizationType = 'AdaptiveMean';
 ob.BinarizationThresh = 0.12;
-ob = ob.batch(inputFile,outputDir,...
-              'Force',true,...
-              'Verbose',true,...
-              'DotsPerPoint',[],...
-              'OutputType', 'Binarized');
+ob.Force = true;
+ob.Verbose = true;
+ob.DotsPerPoint = [];
+ob.OutputType = 'Binarized';
+ob = ob.batch(inputFile,outputDir);
 
 
