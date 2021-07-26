@@ -23,15 +23,15 @@ classdef LineBreaker < handle
         BBoxes              = zeros(0,4) % The positions of objects
         TextBBoxes          = zeros(0,4) % The positions of lines of text
         Bins                = []         % Maps BBoxes to TextBBoxes
-        %OverlapType         = 'Min'
-        OverlapType          = 'Union'
-        OverlapThreshold     = 0.2      % Overlap > this => merge
-        MaxDiacriticSize     = [7,7]    % Max. size of a diacritic: [y,x]
-        MinLineHeight        = 12       % Min. height of a line
-        Force                = false    % Force destructive file operations
-        Verbose              = false    % Be verbose
-        InputFilePattern     = {}       % The list of patterns for batch processing
-        OutputFolder         = []       % The path of the output folder (batch)
+        %OverlapType        = 'Min'
+        OverlapType         = 'Union'
+        OverlapThreshold    = 0.2      % Overlap > this => merge
+        MaxDiacriticSize    = [7,7]    % Max. size of a diacritic: [y,x]
+        MinLineHeight       = 12       % Min. height of a line
+        Force               = false    % Force destructive file operations
+        Verbose             = false    % Be verbose
+        InputFilePattern    = {}       % The list of patterns for batch processing
+        OutputFolder        = []       % The path of the output folder (batch)
     end
     
     properties(Access = private)
