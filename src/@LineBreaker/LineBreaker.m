@@ -36,6 +36,8 @@ classdef LineBreaker < handle
         outputTypeCached = 'Input'      % Cached value of OutputType
         RelBoxExpansion                 % As fraction, e.g. [-0.15 3]
         AbsBoxExpansion                 % As points, e.g. [0, 0]   
+        Force                           % Force destructive file operations
+        Verbose                         % Be verbose
     end
 
     properties(Dependent, Access = public)
