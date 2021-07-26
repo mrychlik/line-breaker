@@ -1,13 +1,11 @@
-function this = batch(this, inputFile, outputDir, varargin)
+function this = batch(this, inputFile, outputDir)
 % BATCH - run LineBreaker in bach mode
-%     THIS = BATCH(THIS, INPUTFILE, OUTPUTDIR, ...) accepts an input
+%     THIS = BATCH(THIS, INPUTFILE, OUTPUTDIR) accepts an input
 %  filename INPUTFILE and output folder OUTPUTDIR, both character
 %  vectors, and a number of options, and creates images with individual lines
 %  of text in the folder.
 %     This function is suitable for creating a standalone executable
 %  implementing LineBreaker functionality.
-    configure(this,'app',[],varargin{:});
-
     if ~exist(outputDir,'dir')
         if force
             mkdir(outputDir);
