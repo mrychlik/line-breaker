@@ -11,7 +11,8 @@
 function LineBreakerMain(inputFile,outputDir,varargin)
     import LineBreaker.*;
     ob = LineBreaker;
-    ob = ob.batch(inputFile,outputDir,varargin{:});
+    ob.configure(varargin{:});
+    ob = ob.batch(inputFile,outputDir);
     quit(0,"force");
 end
 
