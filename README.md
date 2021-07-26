@@ -52,6 +52,18 @@ and it will typically be used to process a large number of input files
 in batch (non-interactive) mode. Examples of batch processing can be found
 in the [tests folder](./tests).
 
+Example: The command
+
+	./LineBreaker '.../line-breaker/images/*.png' /tmp/Lines Force true
+	
+on my Linux machine will process all images with extension '.png' included into this repository
+and will place the results in the folder /tmp/Lines (deeply nested, to avoid name conflicts!).
+The option 'Force' is set to 'true' to allow overwriting files that have already been created.
+Furter options may be provided.
+[TODO: Describe all options that can be provided]
+
+ 
+ 
 
 
 
