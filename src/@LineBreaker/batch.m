@@ -1,9 +1,13 @@
 function this = batch(this, inputFile, outputDir)
 % BATCH - run LineBreaker in bach mode
 %     THIS = BATCH(THIS, INPUTFILE, OUTPUTDIR) accepts an input
-%  filename INPUTFILE and output folder OUTPUTDIR, both character
-%  vectors, and a number of options, and creates images with individual lines
-%  of text in the folder.
+%  filename or filename pattern INPUTFILE and output folder OUTPUTDIR, both character
+%  vectors, and creates images with individual lines
+%  of text in the folder. In addition, INPUTFILE may be a cell array of
+%  filename patterns. This function uses the current settings of LineBreaker
+%  for all files. Hence, all files submitted should be similar, and
+%  should be known to be successfuly broken up into lines by
+%  choosing a representative sample.
     if ~exist(outputDir,'dir')
         if force
             mkdir(outputDir);
