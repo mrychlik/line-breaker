@@ -29,6 +29,18 @@ by programming in MATLAB.
 ## Standalone executables for all major platforms
 For those without a MATLAB license we have executables produced with MATLAB.
 These executable utilize the full power of the MATLAB Runtime, which 
-is distributed by MathWorks for all major platforms.
+is distributed by MathWorks for all major platforms. The installers
+are provided for 
+
+  * Linux (binary created under Fedora 34)
+  * Windows (binary created under Windows 10)
+
+Note that the installers will automatically download the required
+version of MATLAB Runtime as part of the installation process, which
+is a 2.5GB download, and thus will take time.
+  
+
+
+
 
 
