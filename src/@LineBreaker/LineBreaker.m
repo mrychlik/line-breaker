@@ -30,6 +30,8 @@ classdef LineBreaker < handle
         MinLineHeight        = 12       % Min. height of a line
         Force                = false    % Force destructive file operations
         Verbose              = false    % Be verbose
+        InputFilePattern     = {}       % The list of patterns for batch processing
+        OutputFolder         = []       % The path of the output folder (batch)
     end
     
     properties(Access = private)
