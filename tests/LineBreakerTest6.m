@@ -10,6 +10,6 @@
 % Test of batch processing of a single file. Tests 'Force' option
 inputFile = fullfile('..','images','azu_acku_bl51_seen79_1349_w-000016.png');
 outputDir = fullfile('.','Lines-azu_acku_bl51_seen79_1349_w-000016');
-ob = LineBreaker;
-ob = ob.batch(inputFile,outputDir,'Force',true,'Verbose',true);
+ob = LineBreaker('Force',true,'Verbose',true);
+ob = ob.batch(inputFile,outputDir);
 
