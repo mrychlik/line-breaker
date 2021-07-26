@@ -8,23 +8,6 @@ function this = batch(this, inputFile, outputDir, varargin)
 %  implementing LineBreaker functionality.
     configure(this,'app',[],varargin{:});
 
-    if false
-        force = p.Results.Force;
-        verbose = p.Results.Verbose;
-        dotsPerPoint = p.Results.DotsPerPoint;
-        if isdeployed
-            if ischar(force)
-                force = str2num(force);
-            end
-            if ischar(verbose)
-                verbose = str2num(verbose);
-            end
-            if ischar(dotsPerPoint)
-                dotsPerPoint = str2num(dotsPerPoint);
-            end
-        end
-    end
-
     if ~exist(outputDir,'dir')
         if force
             mkdir(outputDir);
