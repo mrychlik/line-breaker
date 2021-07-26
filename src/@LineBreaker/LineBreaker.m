@@ -167,6 +167,19 @@ classdef LineBreaker < handle
             this.OutputType = p.Results.OutputType;
             this.Force = p.Results.Force;
             this.Verbose= p.Results.Verbose;
+
+            % Fix values in deployed applications
+            if isdeployed
+                if ischar(this.Force)
+                    this.Force = str2num(this.Force);
+                end
+                if ischar(this.Verbose)
+                    this.Verbose = str2num(this.Verbose);
+                end
+                if ischar(this.DotsPerPoint)
+                    this.DotsPerPoint = str2num(this.DotsPerPoint);
+                end
+            end
         end
 
         function appDataPath = get.appDataPath(this)
