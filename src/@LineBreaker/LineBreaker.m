@@ -28,6 +28,8 @@ classdef LineBreaker < handle
         OverlapThreshold     = 0.2      % Overlap > this => merge
         MaxDiacriticSize     = [7,7]    % Max. size of a diacritic: [y,x]
         MinLineHeight        = 12       % Min. height of a line
+        Force                           % Force destructive file operations
+        Verbose                         % Be verbose
     end
     
     properties(Access = private)
@@ -36,8 +38,6 @@ classdef LineBreaker < handle
         outputTypeCached = 'Input'      % Cached value of OutputType
         RelBoxExpansion                 % As fraction, e.g. [-0.15 3]
         AbsBoxExpansion                 % As points, e.g. [0, 0]   
-        Force                           % Force destructive file operations
-        Verbose                         % Be verbose
     end
 
     properties(Dependent, Access = public)
