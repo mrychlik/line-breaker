@@ -9,6 +9,7 @@
 %----------------------------------------------------------------
 % Test of batch processing of two files. Tests 'Force' option
 preamble;
+% Construct a list of two patterns separated with the pathsep (':' on Unix, ';' on Windows).
 inputFile = [fullfile('..','images','sinat-074.png'),...
              pathsep,...
              fullfile('..','images','azu_acku_bl51_seen79_1349_w-000016.png')];
