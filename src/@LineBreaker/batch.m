@@ -1,13 +1,21 @@
-function this = batch(this, inputFile, outputDir)
+function this = batch(this)
 % BATCH - run LineBreaker in bach mode
-%     THIS = BATCH(THIS, INPUTFILE, OUTPUTDIR) accepts an input
-%  filename or filename pattern INPUTFILE and output folder OUTPUTDIR, both character
-%  vectors, and creates images with individual lines
-%  of text in the folder. In addition, INPUTFILE may be a cell array of
-%  filename patterns. This function uses the current settings of LineBreaker
+%     THIS = BATCH(THIS) processes
+%  files whose name matches the variable this.InputFilePattern and
+%  outputs the results to the folder this.OutputDirectory. In that
+%  directory a subdirectory is created for each matching image file, with name identical to
+%  the name of the image file, and in that directory
+%  images are created with individual lines of text. 
+%     
+%  In addition, this.InputFilePattern may be a cell array of
+%  filename patterns. 
+%
+%  All image files are processed with the current settings of LineBreaker,
 %  for all files. Hence, all files submitted should be similar, and
 %  should be known to be successfuly broken up into lines by
-%  choosing a representative sample.
+%  choosing a representative sample. The parameters should be chosen
+%  first. This can be done by first processing one of the files.
+%
     this.Force = true;
     if ~exist(outputDir,'dir')
         if this.Force
