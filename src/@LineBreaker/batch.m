@@ -1,4 +1,4 @@
-function this = batch(this)
+function this = batch(this, input_file_pattern, output_directory)
 % BATCH - run LineBreaker in bach mode
 %
 %     THIS = BATCH(THIS) processes files whose name matches the variable
@@ -17,6 +17,10 @@ function this = batch(this)
 %  representative sample. The parameters should be chosen first. This can be
 %  done by first processing one of the files.
 %
+    if nargin >= 2
+        this.InputFilePattern = inputFilePattern;
+    end
+
     this.Force = true;
     this.InterruptFlag = false;
     if ~exist(this.OutputDirectory,'dir')
@@ -41,6 +45,8 @@ function this = batch(this)
     this = batch_helper(this, file_lst, this.OutputDirectory);
 end
 
+
+end
 
 function this = batch_helper(this, file_lst, outputFolder)
     for j=1:numel(file_lst)
