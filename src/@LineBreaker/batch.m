@@ -44,7 +44,6 @@ function this = batch_one(this, inputFile, outputFolder)
 end
 
 function this = batch_single_file(this, inputFile, lineOuputFolder)
-    this.notifyFileCompleted(inputFile);
     this.CurrentFilepath = inputFile;
     this.binarizeCurrentImage;
     lines = this.ImageLines;
