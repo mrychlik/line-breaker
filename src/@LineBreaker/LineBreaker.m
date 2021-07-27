@@ -161,7 +161,6 @@ classdef LineBreaker < handle
             expectedOutputTypes = {'Input','Binarized'};
             p.addParameter('OutputType',defaultOutputType,...
                            @(x) any(validatestring(x, expectedOutputTypes)));    
-            p.addParameter('Force',false,@islogical);
             defaultInputFilePattern = fullfile('..','images','*.png');
             p.addParameter('InputFilePattern',defaultInputFilePattern,...
                            @(x) ischar(x) || isstring(x) || iscell(x));
@@ -182,6 +181,8 @@ classdef LineBreaker < handle
             this.OutputType = p.Results.OutputType;
             this.Force = p.Results.Force;
             this.Verbose= p.Results.Verbose;
+            this.InputFilePattern = p.Results.InputFilePattern;
+            this.OutputDirectory = p.Results.OutputDirectory;
 
             % Fix values in deployed applications
             if isdeployed
