@@ -281,6 +281,21 @@ classdef LineBreaker < handle
             end
         end
         
+        function this = set.InputFilePattern(this, pattern)
+            if ischar(pattern)
+                this.InputFilePattern = split(pattern,',')';
+            elseif isstring(pattern)
+                pattern = split(pattern,',')';
+                % Now we have a 1-by-N string array, we need a cell array
+                % of char vectors:
+                this.InputFilePattern = arrayfun(@(j)cellstr(char(pattern(j))),1:numel(pattern));
+            elseif iscell(pattern) & all(cellfun(@ischar,pattern))
+                this.InputFilePattern = pattern;
+            else
+                this.InputFilePattern = [];
+            end
+        end
+
         this = findOverlapsFirstPass(this)
         this = findOverlapsSecondPass(this)
 
@@ -318,4 +333,6 @@ classdef LineBreaker < handle
         bboxes = invertConvertBox(boxBounds)
         BW = binarizeImage(fig,I,Type,Thres)
     end
+    end
 end
+
