@@ -10,7 +10,7 @@
 % Test of batch processing of a single file. Tests 'Force' option
 preamble;
 inputFile = fullfile('..','images','sinat-074.png');
-outputDir = fullfile('.','Lines-sinat-074');
+outputDir = fullfile('..','Bingo','Lines-sinat-074');
 ob = LineBreaker('Force',true,'Verbose',true);
 ob.SmallSizeThreshold = 10;
 ob.batch(inputFile,outputDir);
