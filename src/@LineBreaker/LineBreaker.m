@@ -299,7 +299,7 @@ classdef LineBreaker < handle
             if ischar(pattern)
                 this.InputFilePattern = split(pattern,',')';
             elseif isstring(pattern)
-                pattern = split(pattern,',')';
+                pattern = split(pattern,pathsep)';
                 % Now we have a 1-by-N string array, we need a cell array
                 % of char vectors:
                 this.InputFilePattern = arrayfun(@(j)cellstr(char(pattern(j))),1:numel(pattern));
