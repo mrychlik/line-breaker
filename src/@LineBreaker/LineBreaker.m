@@ -139,7 +139,7 @@ classdef LineBreaker < handle
             p.addOptional('app',[],@(x)isempty(x)||isa(x,'LineBreakerApp'));
             p.addParameter('Force',false,@(x)islogical(x)||ischar(x));
             p.addParameter('Verbose',false,@(x)islogical(x)||ischar(x));
-            p.addParameter('DotsPerPoint',1,@isscalar);
+            p.addParameter('DotsPerPoint',1,@(x)isscalar(x)||isempty(x));
             p.addParameter('AbsHorExpansion',0,@isscalar);
             p.addParameter('AbsVertExpansion',0,@isscalar);
             p.addParameter('RelHorExpansion',3,@isscalar);
