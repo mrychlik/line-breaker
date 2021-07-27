@@ -22,9 +22,11 @@ function this = batch(this, inputFile, outputDir)
     if ~iscell(inputFile)
         inputFile = { inputFile };
     end
+    this.notifyFileCompleted('Working...');
     for j=1:numel(inputFile)
         this = batch_one(this, inputFile{j},outputDir);
     end
+    this.notifyFileCompleted('Done.');
 end
 
 
