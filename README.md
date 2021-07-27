@@ -49,7 +49,9 @@ for the particular content are discovered.
 ### The command-line variant
 The non-GUI application called simply *LineBreaker* runs from command line
 and it will typically be used to process a large number of input files
-in batch (non-interactive) mode. Examples of batch processing can be found
+in batch (non-interactive) mode. 
+
+Examples of batch processing can be found
 in the [tests folder](./tests).
 
 Example: The command
