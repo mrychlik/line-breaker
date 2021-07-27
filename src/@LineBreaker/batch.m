@@ -28,19 +28,16 @@ function this = batch(this)
         end
     end
     
-    if ~iscell(inputFile)
-        inputFile = { inputFile };
-    end
     this.notifyFileCompleted('Gathering file info...');
     file_lst = [];
     file_count = 0;
-    for j=1:numel(inputFile)
-        loc_file_lst = dir(inputFile{j});
+    for j=1:numel(this.InputFilePattern)
+        loc_file_lst = dir(this.InputFilePattern{j});
         file_count = file_count + numel(loc_file_lst);
         this.notifyFileCompleted(['File count is now ', num2str(file_count), '...']);
         file_lst = [file_lst, loc_file_lst];
     end
-    this = batch_helper(this, file_lst, outputDir);
+    this = batch_helper(this, file_lst, this.OutputDirectory);
     this.notifyFileCompleted('Done.');
 end
 
