@@ -1,4 +1,4 @@
-function notifyFileCompleted(this, filename)
+function this = notifyFileCompleted(this, filename)
     if ~isempty(this.app)
         this.app.FileCompletedLabel.Text = filename;
     else
