@@ -35,6 +35,7 @@ function this = batch_one(this, inputFile, outputFolder)
     end
     for j=1:numel(d)
         lineOutputFolder = fullfile(outputFolder,d(j).folder, d(j).name);
+        this.notifyFileCompleted(d(j).name);
         mkdir(lineOutputFolder);
         batch_single_file(this, ...
                           fullfile(d(j).folder, d(j).name),...
