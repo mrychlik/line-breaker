@@ -10,7 +10,7 @@
 % Chinese
 preamble;
 inputFile = fullfile('..','images','38004.png');
-outputDir = fullfile('.','Chars-38004-mono');
+outputDir = fullfile('..','Bingo','Chars-38004-mono');
 ob = LineBreaker;
 ob.RelHorExpansion = 0.15;
 ob.RelVertExpansion = 0.05;
