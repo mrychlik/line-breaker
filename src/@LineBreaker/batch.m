@@ -9,7 +9,7 @@ function this = batch(this, inputFile, outputDir)
 %  should be known to be successfuly broken up into lines by
 %  choosing a representative sample.
     if ~exist(outputDir,'dir')
-        if force
+        if this.Force
             mkdir(outputDir);
             warning('Output directory %s created.', outputDir);
         else
