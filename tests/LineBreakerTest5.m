@@ -7,7 +7,7 @@
 % Copying:  (C) Marek Rychlik, 2019. All rights reserved.
 % 
 %----------------------------------------------------------------
-% Test of batch processing of a single file. Tests 'Force' option
+% Test of batch processing of two files. Tests 'Force' option
 preamble;
 inputFile = fullfile('..',['images','sinat-074.png',pathsep,'azu_acku_bl51_seen79_1349_w-000016.png']);
 outputDir = fullfile('..','Bingo','Lines-sinat-074-and-azu_acku_bl51_seen79_1349_w-000016');
