@@ -11,17 +11,17 @@
 path(path,'..');
 inputFile = fullfile('..','images','38004.png');
 outputDir = fullfile('.','Chars-38004');
-ob = LineBreaker;
+ob = LineBreaker('Force',true,...
+                 'Verbose',true,...
+                 'DotsPerPoint',[],...
+                 'OutputType', 'Input');
+;
 ob.RelHorExpansion = 0.15;
 ob.RelVertExpansion = 0.05;
 ob.BigSizeThreshold = 1;
 ob.SmallSizeThreshold = 1;
 ob.BinarizationType = 'AdaptiveMean';
 ob.BinarizationThresh = 0.12;
-ob = ob.batch(inputFile,outputDir,...
-              'Force',true,...
-              'Verbose',true,...
-              'DotsPerPoint',[],...
-              'OutputType', 'Input');
+ob = ob.batch(inputFile,outputDir);
 
 
