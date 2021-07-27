@@ -105,7 +105,7 @@ function rel_folder = make_folder_relative(folder)
         end
         rest = {@fullfile, parts{2:end}};
         rest = feval(rest{:});
-        rel_folder = fullfile(potential_vol_label, rest);
+        rel_folder = fullfile(potential_vol_label, rest)
     else
         rel_folder = folder;
     end
