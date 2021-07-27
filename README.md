@@ -49,7 +49,6 @@ for the particular content are discovered.
 ![GUIScreenshot1](./screenshots/GUIScreenshot1.png "GUI screenshot 1")
 
 
-
 ### The command-line variant
 The non-GUI application called simply *LineBreaker* runs from command line
 and it will typically be used to process a large number of input files
