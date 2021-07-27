@@ -32,7 +32,7 @@ These executable utilize the full power of the MATLAB Runtime, which
 is distributed by MathWorks for all major platforms. The installers
 are provided for 
 
-  * [Linux](./installers/Linux) (binary created under Fedora 34)
+  * [Linux](./src/LineBreakerApp) (binary created under Fedora 34)
   * [Windows](./installers/Windows) (binary created under Windows 10)
 
 Note that the installers will automatically download the required
