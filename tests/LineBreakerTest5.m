@@ -20,6 +20,6 @@ outputDir = fullfile('..','Bingo','Lines-sinat-074-and-azu_acku_bl51_seen79_1349
 ob = LineBreaker('Force',true,'Verbose',true);
 ob.SmallSizeThreshold = 10;
 
-% Start batch processing of both file patterns (which match two files exactly).
+% Start batch processing of both input file patterns (which match two files exactly).
 ob.batch(inputFile,outputDir);
 
