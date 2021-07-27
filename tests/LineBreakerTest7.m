@@ -11,6 +11,6 @@
 preamble;
 inputFile = fullfile('..','images','38059-000001.png');
 outputDir = fullfile('.','Lines-38059-000001');
-ob = LineBreaker('Force',true,'Verbose',true,'DotsPerPoint',[]);
+ob = LineBreaker('Force',true,'Verbose',true);
 ob = ob.batch(inputFile,outputDir);
 
