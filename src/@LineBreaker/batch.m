@@ -21,7 +21,7 @@ function this = batch(this)
     if ~exist(this.OutputDirectory,'dir')
         if this.Force
             mkdir(this.OutputDirectory);
-            warning('Output directory %s created.', outputDir);
+            warning('Output directory %s created.', this.OutputDir);
         else
             error('Output directory %s does not exist. Set ''Force'' to true?', ...
                   this.OutputDirectory);
