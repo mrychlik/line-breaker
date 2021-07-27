@@ -4,4 +4,5 @@ function this = notifyFileCompleted(this, filename)
     else
         fprintf('File completed: %s', filename);
     end
+    drawnow;
 end
