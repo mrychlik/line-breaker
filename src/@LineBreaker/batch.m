@@ -18,6 +18,7 @@ function this = batch(this)
 %  done by first processing one of the files.
 %
     this.Force = true;
+    this.InterruptFlag = false;
     if ~exist(this.OutputDirectory,'dir')
         if this.Force
             mkdir(this.OutputDirectory);
@@ -44,6 +45,10 @@ end
 
 function this = batch_helper(this, file_lst, outputFolder)
     for j=1:numel(file_lst)
+        if this.InterruptFlag 
+            this.InterruptFlag = false;
+            break;
+        end
         lineOutputFolder = fullfile(outputFolder,file_lst(j).folder, file_lst(j).name);
         this.notifyFileCompleted(['Working on file: ', file_lst(j).name]);
         mkdir(lineOutputFolder);
