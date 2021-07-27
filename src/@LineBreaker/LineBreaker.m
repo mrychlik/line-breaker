@@ -297,7 +297,7 @@ classdef LineBreaker < handle
         
         function this = set.InputFilePattern(this, pattern)
             if ischar(pattern)
-                this.InputFilePattern = split(pattern,',')';
+                this.InputFilePattern = split(pattern,pathsep)';
             elseif isstring(pattern)
                 pattern = split(pattern,pathsep)';
                 % Now we have a 1-by-N string array, we need a cell array
