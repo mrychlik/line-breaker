@@ -1,4 +1,4 @@
-function this = batch(this, input_file_pattern, output_directory)
+function this = batch(this, inputFilePattern, outputDirectory)
 % BATCH - run LineBreaker in bach mode
 %
 %     THIS = BATCH(THIS) processes files whose name matches the variable
@@ -19,6 +19,9 @@ function this = batch(this, input_file_pattern, output_directory)
 %
     if nargin >= 2
         this.InputFilePattern = inputFilePattern;
+    end
+    if nargin >= 3
+        this.OutputDirectory = outputDirectory;
     end
 
     this.Force = true;
