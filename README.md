@@ -44,7 +44,11 @@ is a 2.5GB download, and thus will take time.
 ### The GUI variant
 The GUI application called *LineBreakerApp* launches a GUI which will allow
 breaking up scanned page interactively. In the process, the best parameters
-for the particular content are discovered.
+for the particular content are discovered. 
+
+![GUIScreenshot1](./screenshots/GUIScreenshot1.png "GUI screenshot 1")
+
+
 
 ### The command-line variant
 The non-GUI application called simply *LineBreaker* runs from command line
