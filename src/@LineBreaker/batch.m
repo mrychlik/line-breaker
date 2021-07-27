@@ -37,9 +37,6 @@ end
 
 
 function this = batch_helper(this, file_lst, outputFolder)
-    if isempty(file_lst) 
-        warning('There are no files matching: %s', inputFile);
-    end
     for j=1:numel(file_lst)
         lineOutputFolder = fullfile(outputFolder,file_lst(j).folder, file_lst(j).name);
         this.notifyFileCompleted(['Working on file: ', file_lst(j).name]);
