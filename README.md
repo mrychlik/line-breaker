@@ -65,7 +65,8 @@ would be useful.
 on out Linux machine will process all images with extension '.png' included into this repository
 and will place the results in the folder /tmp/Lines (deeply nested, to avoid name conflicts!).
 The option 'Force' is set to 'true' to allow overwriting files that have already been created.
-Furter options may be provided.
+Furter options may be supplied on command-line. The options correspond to the options
+available in the GUI version.
 
 [TODO: Describe all options that can be provided]
 
