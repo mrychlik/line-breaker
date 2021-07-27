@@ -61,6 +61,8 @@ classdef LineBreaker < handle
         RelVertExpansion
         AbsHorExpansion
         AbsVertExpansion
+
+        IputFilePatternCSV              % Input file pattern as a CSV string
     end
     
     methods
@@ -294,6 +296,10 @@ classdef LineBreaker < handle
             else
                 this.InputFilePattern = [];
             end
+        end
+
+        function str = get.InputFilePatternCSV(this)
+            str = strjoin(this.InputFilePattern,',');
         end
 
         this = findOverlapsFirstPass(this)
