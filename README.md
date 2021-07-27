@@ -47,14 +47,18 @@ breaking up scanned page interactively. In the process, the best parameters
 for the particular content are discovered.
 
 ### The command-line variant
-NOTE: The command-line variant is currently considered for phasing out,
-as the batch functionality was added to the GUI.
-
 The non-GUI application called simply *LineBreaker* runs from command line
 and it will typically be used to process a large number of input files
 in batch (non-interactive) mode. 
 
-Example: The command
+NOTE: The command-line variant is currently considered for phasing out,
+as the batch functionality was added to the GUI. It may be completely
+abandoned if the need for it does not exist. It is conceivable,
+however, that some users may use remote servers without GUI access to
+do batch processing, in which case the command-line variant of *LineBreaker*
+would be useful.
+
+*Example:* The command
 
 	./LineBreaker '.../line-breaker/images/*.png' /tmp/Lines Force true
 	
