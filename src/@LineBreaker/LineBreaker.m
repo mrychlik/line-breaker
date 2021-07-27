@@ -40,6 +40,7 @@ classdef LineBreaker < handle
         outputTypeCached = 'Input'      % Cached value of OutputType
         RelBoxExpansion                 % As fraction, e.g. [-0.15 3]
         AbsBoxExpansion                 % As points, e.g. [0, 0]   
+        InterruptFlag = false;          % Set to true/check to stop iteration
     end
 
     properties(Dependent, Access = public)
