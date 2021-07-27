@@ -18,13 +18,13 @@ function this = batch(this)
 %  done by first processing one of the files.
 %
     this.Force = true;
-    if ~exist(outputDir,'dir')
+    if ~exist(this.OutputDirectory,'dir')
         if this.Force
-            mkdir(outputDir);
+            mkdir(this.OutputDirectory);
             warning('Output directory %s created.', outputDir);
         else
             error('Output directory %s does not exist. Set ''Force'' to true?', ...
-                  outputDir);
+                  this.OutputDirectory);
         end
     end
     
