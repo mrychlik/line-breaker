@@ -39,7 +39,6 @@ function this = batch(this)
         file_lst = [file_lst, loc_file_lst];
     end
     this = batch_helper(this, file_lst, this.OutputDirectory);
-    this.notifyFileCompleted('Done.');
 end
 
 
@@ -58,6 +57,7 @@ function this = batch_helper(this, file_lst, outputFolder)
                           lineOutputFolder);
         this.notifyFileCompleted(['File done: ', file_lst(j).name]);
     end
+    this.notifyFileCompleted('Done.');
 end
 
 function this = batch_single_file(this, inputFile, lineOuputFolder)
