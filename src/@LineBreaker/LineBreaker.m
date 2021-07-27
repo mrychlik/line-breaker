@@ -311,7 +311,7 @@ classdef LineBreaker < handle
         end
 
         function InputFilePatternCSV = get.InputFilePatternCSV(this)
-            InputFilePatternCSV = strjoin(this.InputFilePattern,',');
+            InputFilePatternCSV = strjoin(this.InputFilePattern,pathsep);
         end
 
         this = findOverlapsFirstPass(this)
