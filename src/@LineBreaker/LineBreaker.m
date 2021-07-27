@@ -62,7 +62,7 @@ classdef LineBreaker < handle
         AbsHorExpansion
         AbsVertExpansion
 
-        InputFilePatternCSV              % Input file pattern as a CSV string
+        InputFilePatternCSV             % Input file pattern as a CSV string
     end
     
     methods
