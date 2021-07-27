@@ -333,6 +333,5 @@ classdef LineBreaker < handle
         bboxes = invertConvertBox(boxBounds)
         BW = binarizeImage(fig,I,Type,Thres)
     end
-    end
 end
 
