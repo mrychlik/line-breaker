@@ -10,7 +10,7 @@
 preamble;
 % Test of batch processing of a single file. Tests 'Force' option
 inputFile = fullfile('..','images','page-14.png');
-outputDir = fullfile('.','Lines-page-14');
+outputDir = fullfile('..','Bingo','Lines-page-14');
 ob=LineBreaker('Force',true,'Verbose',true);
 ob=ob.batch(inputFile,outputDir);
 
