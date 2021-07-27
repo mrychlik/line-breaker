@@ -47,6 +47,7 @@ function this = batch_helper(this, file_lst, outputFolder)
         batch_single_file(this, ...
                           fullfile(file_lst(j).folder, file_lst(j).name),...
                           lineOutputFolder);
+        this.notifyFileCompleted(['File done: ', file_lst(j).name]);
     end
 end
 
