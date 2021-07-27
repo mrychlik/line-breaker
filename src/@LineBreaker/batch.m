@@ -47,7 +47,7 @@ function this = batch_helper(this, file_lst, outputFolder)
         if this.InterruptFlag 
             this.InterruptFlag = false;
             this.notifyFileCompleted('Job interrupted by the user.');
-            break;
+            return;
         end
         lineOutputFolder = fullfile(outputFolder,file_lst(j).folder, file_lst(j).name);
         this.notifyFileCompleted(['Working on file: ', file_lst(j).name]);
