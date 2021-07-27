@@ -10,7 +10,7 @@
 % Chinese
 preamble;
 inputFile = fullfile('..','images','38059-000001.png');
-outputDir = fullfile('.','Lines-38059-000001');
+outputDir = fullfile('..','Bingo','Lines-38059-000001');
 ob = LineBreaker('Force',true,'Verbose',true);
 ob = ob.batch(inputFile,outputDir);
 
