@@ -22,13 +22,13 @@ function this = batch(this, inputFile, outputDir)
     if ~iscell(inputFile)
         inputFile = { inputFile };
     end
-    this.notifyFileCompleted('Working...');
+    this.notifyFileCompleted('Gathering file info...');
     file_lst = [];
     file_count = 0;
     for j=1:numel(inputFile)
         loc_file_lst = dir(inputFile{j});
         file_count = file_count + numel(loc_file_lst);
-        this.notifyFileCompleted(['File count is ', num2str(file_count), '...']);
+        this.notifyFileCompleted(['File count is now ', num2str(file_count), '...']);
         file_lst = [file_lst, loc_file_lst];
     end
     this = batch_helper(this, file_lst, outputDir);
@@ -42,7 +42,7 @@ function this = batch_helper(this, file_lst, outputFolder)
     end
     for j=1:numel(file_lst)
         lineOutputFolder = fullfile(outputFolder,file_lst(j).folder, file_lst(j).name);
-        this.notifyFileCompleted(file_lst(j).name);
+        this.notifyFileCompleted(['Working on file: ', file_lst(j).name]);
         mkdir(lineOutputFolder);
         batch_single_file(this, ...
                           fullfile(file_lst(j).folder, file_lst(j).name),...
