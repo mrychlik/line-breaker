@@ -56,7 +56,8 @@ function this = batch_helper(this, file_lst, outputFolder)
             this.notifyFileCompleted('Job interrupted by the user.');
             return;
         end
-        lineOutputFolder = fullfile(outputFolder,file_lst(j).folder, file_lst(j).name);
+        rel_folder = make_folder_relative(file_lst(j).folder);
+        lineOutputFolder = fullfile(outputFolder,rel_folder, file_lst(j).name);
         this.notifyFileCompleted(['Working on file: ', file_lst(j).name]);
         mkdir(lineOutputFolder);
         batch_single_file(this, ...
@@ -91,3 +92,22 @@ function this = batch_single_file(this, inputFile, lineOuputFolder)
         end
     end
 end
+
+function rel_folder = make_folder_relative(folder)
+    if ispc
+        % The problem on Windows platform is the
+        % volume label which cannot be present in the relative path
+        parts = split(folder, filesep);
+        potential_vol_label = parts{1};
+        if potential_vol_label(end) == ':'
+            % Replace volume label, e.g. C:, with C_
+            potential_vol_label = [potential_vol_label(1:end-1),'_'];
+        end
+        rest = {@fullfile, parts{2:end}};
+        rest = feval(rest{:});
+        rel_folder = fullfile(potential_vol_label, rest);
+    else
+        rel_folder = folder;
+    end
+end
+
