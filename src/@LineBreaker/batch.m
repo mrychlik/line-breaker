@@ -8,6 +8,7 @@ function this = batch(this, inputFile, outputDir)
 %  for all files. Hence, all files submitted should be similar, and
 %  should be known to be successfuly broken up into lines by
 %  choosing a representative sample.
+    this.Force = true;
     if ~exist(outputDir,'dir')
         if this.Force
             mkdir(outputDir);
@@ -42,6 +43,7 @@ function this = batch_one(this, inputFile, outputFolder)
 end
 
 function this = batch_single_file(this, inputFile, lineOuputFolder)
+    this.notifyFileCompleted(inputFile);
     this.CurrentFilepath = inputFile;
     this.binarizeCurrentImage;
     lines = this.ImageLines;
