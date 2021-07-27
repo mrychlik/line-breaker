@@ -17,8 +17,9 @@ inputFile = [fullfile('..','images','sinat-074.png'),...
 % Folder to place the output (image files with lines) of both images
 outputDir = fullfile('..','Bingo','Lines-sinat-074-and-azu_acku_bl51_seen79_1349_w-000016');
 
-% Normal processing
 ob = LineBreaker('Force',true,'Verbose',true);
 ob.SmallSizeThreshold = 10;
+
+% Start batch processing of both files
 ob.batch(inputFile,outputDir);
 
