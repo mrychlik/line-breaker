@@ -19,8 +19,8 @@ and reasonably self-contained from the point of view of semantics.
 ## Basic functionality
 The application takes a scanned page of text as input and breaks in put into
 smaller images isolating lines, words or characters, depending on the settings.
-The application functions either as an interactive, GUI-based application,
-or in batch mode as a standalone, GUI-less executable.
+The application functions either as an interactive, GUI-based application.
+
 
 ## MATLAB 
 The application is natively written in MATLAB and therefore it can be extended
