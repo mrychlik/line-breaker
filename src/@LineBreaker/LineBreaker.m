@@ -31,7 +31,7 @@ classdef LineBreaker < handle
         Force               = false    % Force destructive file operations
         Verbose             = false    % Be verbose
         InputFilePattern    = {}       % The list of patterns for batch processing
-        OutputDirectory     = []       % The path of the output folder (batch)
+        OutputDirectory     = ''       % The path of the output folder (batch)
     end
     
     properties(Access = private)
