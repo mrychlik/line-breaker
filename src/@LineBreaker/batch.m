@@ -49,8 +49,6 @@ function this = batch(this, inputFilePattern, outputDirectory)
 end
 
 
-end
-
 function this = batch_helper(this, file_lst, outputFolder)
     for j=1:numel(file_lst)
         if this.InterruptFlag 
