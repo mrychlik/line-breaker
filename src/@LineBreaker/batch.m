@@ -23,24 +23,29 @@ function this = batch(this, inputFile, outputDir)
         inputFile = { inputFile };
     end
     this.notifyFileCompleted('Working...');
+    file_lst = [];
+    file_count = 0;
     for j=1:numel(inputFile)
-        this = batch_one(this, inputFile{j},outputDir);
+        loc_file_lst = dir(inputFile{j});
+        file_count = file_count + numel(loc_file_lst);
+        this.notifyFileCompleted(['File count is ', num2str(file_count), '...']);
+        file_lst = [file_lst, loc_file_list];
     end
+    this = batch_helper(this, file_lst, outputDir);
     this.notifyFileCompleted('Done.');
 end
 
 
-function this = batch_one(this, inputFile, outputFolder)
-    d = dir(inputFile);
-    if isempty(d) 
+function this = batch_helper(this, file_lst, outputFolder)
+    if isempty(file_lst) 
         warning('There are no files matching: %s', inputFile);
     end
-    for j=1:numel(d)
-        lineOutputFolder = fullfile(outputFolder,d(j).folder, d(j).name);
-        this.notifyFileCompleted(d(j).name);
+    for j=1:numel(file_lst)
+        lineOutputFolder = fullfile(outputFolder,file_lst(j).folder, file_lst(j).name);
+        this.notifyFileCompleted(file_lst(j).name);
         mkdir(lineOutputFolder);
         batch_single_file(this, ...
-                          fullfile(d(j).folder, d(j).name),...
+                          fullfile(file_lst(j).folder, file_lst(j).name),...
                           lineOutputFolder);
     end
 end
