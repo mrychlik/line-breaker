@@ -161,6 +161,13 @@ classdef LineBreaker < handle
             expectedOutputTypes = {'Input','Binarized'};
             p.addParameter('OutputType',defaultOutputType,...
                            @(x) any(validatestring(x, expectedOutputTypes)));    
+            p.addParameter('Force',false,@islogical);
+            defaultInputFilePattern = fullfile('..','images','*.png');
+            p.addParameter('InputFilePattern',defaultInputFilePattern,...
+                           @(x) ischar(x) || isstring(x) || iscell(x));
+            defaultOuputDirectory = fullfile('..','Bingo');
+            p.addParameter('OutputDirectory',defaultOutputDirectory,...
+                           @(x) ischar(x));
             p.parse(varargin{:});    
 
             this.app = p.Results.app;
