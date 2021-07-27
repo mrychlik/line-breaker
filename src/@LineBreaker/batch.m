@@ -29,7 +29,7 @@ function this = batch(this, inputFile, outputDir)
         loc_file_lst = dir(inputFile{j});
         file_count = file_count + numel(loc_file_lst);
         this.notifyFileCompleted(['File count is ', num2str(file_count), '...']);
-        file_lst = [file_lst, loc_file_list];
+        file_lst = [file_lst, loc_file_lst];
     end
     this = batch_helper(this, file_lst, outputDir);
     this.notifyFileCompleted('Done.');
