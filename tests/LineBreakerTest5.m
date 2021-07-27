@@ -9,8 +9,8 @@
 %----------------------------------------------------------------
 % Test of batch processing of two files. Tests 'Force' option
 preamble;
-inputFile = [fullfile('..','images','sinat-074.png'),
-             pathsep,
+inputFile = [fullfile('..','images','sinat-074.png'),...
+             pathsep,...
              fullfile('..','images','azu_acku_bl51_seen79_1349_w-000016.png')];
 outputDir = fullfile('..','Bingo','Lines-sinat-074-and-azu_acku_bl51_seen79_1349_w-000016');
 ob = LineBreaker('Force',true,'Verbose',true);
