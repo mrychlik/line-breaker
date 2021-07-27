@@ -299,6 +299,7 @@ classdef LineBreaker < handle
         this = guessResolution(this)
         this = binarizeCurrentImage(this)
         this = showBinarizedImage(this)
+        this = notifyFileCompleted(this, filename)
     end
 
 
