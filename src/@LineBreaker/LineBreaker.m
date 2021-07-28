@@ -290,6 +290,9 @@ classdef LineBreaker < handle
                     this.CurrentFilepath = filepath;
                     this.CurrentImage = LineBreaker.readImage(filepath);
                     this.guessResolution;
+                    if ~isempty(this.app)
+                        this.app.EmptyFilePathLabel.Text = this.CurrentFilepath;
+                    end
                 catch me
                     this.CurrentFilepath = [];
                     this.CurrentImage =[];
@@ -297,9 +300,6 @@ classdef LineBreaker < handle
                     this.DotsPerPoint = [];
                     this.notifyFileCompleted(['Invalid image file: ', filepath ]);
                 end
-            end
-            if ~isempty(this.app)
-                this.app.EmptyFilePathLabel.Text = this.CurrentFilepath;
             end
         end
         
