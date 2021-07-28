@@ -56,6 +56,9 @@ function this = batch_helper(this, file_lst, outputFolder)
             this.notifyFileCompleted('Job interrupted by the user.');
             return;
         end
+        if file_lst(j).isdir
+            continue;
+        end
         rel_folder = make_folder_relative(file_lst(j).folder);
         lineOutputFolder = fullfile(outputFolder,rel_folder, file_lst(j).name);
         this.notifyFileCompleted(['Working on file: ', file_lst(j).name]);
