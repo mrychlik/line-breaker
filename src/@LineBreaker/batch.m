@@ -74,6 +74,9 @@ end
 
 function this = batch_single_file(this, inputFile, lineOuputFolder)
     this.CurrentFilepath = inputFile;
+    if isempty(this.CurrentFilepath) 
+        return;
+    end
     this.binarizeCurrentImage;
     lines = this.ImageLines;
     disp("Lines in image: " + numel(lines));
