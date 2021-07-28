@@ -57,6 +57,7 @@ function this = batch_helper(this, file_lst, outputFolder)
             return;
         end
         if file_lst(j).isdir
+            this.notifyFileCompleted(['Skipping directory: ', file.lst(j).name]);
             continue;
         end
         rel_folder = make_folder_relative(file_lst(j).folder);
