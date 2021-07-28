@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="1565663115" file="/home/marek/GitCode/line-breaker/src/LineBreaker.prj" location="/home/marek/GitCode/line-breaker/src" name="LineBreaker" preferred-package-location="/home/marek/GitCode/line-breaker/src/LineBreaker/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="3612751273" file="/home/marek/GitCode/line-breaker/src/LineBreaker.prj" location="/home/marek/GitCode/line-breaker/src" name="LineBreaker" preferred-package-location="/home/marek/GitCode/line-breaker/src/LineBreaker/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>LineBreaker</param.appname>
     <param.icon />
     <param.icons />
@@ -114,6 +114,7 @@ ${LD_LIBRARY_PATH}:MR/v98/runtime/glnxa64:MR/v98/bin/glnxa64:MR/v98/sys/os/glnxa
       <file>${PROJECT_ROOT}/@LineBreaker/isProperSubBox.m</file>
       <file>${PROJECT_ROOT}/@LineBreaker/isSubBox.m</file>
       <file>${PROJECT_ROOT}/@LineBreaker/locateText.m</file>
+      <file>${PROJECT_ROOT}/@LineBreaker/notifyFileCompleted.m</file>
       <file>${PROJECT_ROOT}/@LineBreaker/openFile.m</file>
       <file>${PROJECT_ROOT}/@LineBreaker/plot.m</file>
       <file>${PROJECT_ROOT}/@LineBreaker/readImage.m</file>
