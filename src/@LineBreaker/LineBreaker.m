@@ -295,7 +295,7 @@ classdef LineBreaker < handle
                     this.CurrentImage =[];
                     this.TextBBoxes = [];
                     this.DotsPerPoint = [];
-                    this.notifyFileCompleted('Invalid image file: %s', filepath);
+                    this.notifyFileCompleted(['Invalid image file: ', filepath ]);
                 end
             end
             if ~isempty(this.app)
