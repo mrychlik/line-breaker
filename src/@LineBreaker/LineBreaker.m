@@ -286,9 +286,17 @@ classdef LineBreaker < handle
                 this.TextBBoxes = [];
                 this.DotsPerPoint = [];
             elseif exist(filepath,'file') == 2
-                this.CurrentFilepath = filepath;
-                this.CurrentImage = LineBreaker.readImage(filepath);
-                this.guessResolution;
+                try 
+                    this.CurrentFilepath = filepath;
+                    this.CurrentImage = LineBreaker.readImage(filepath);
+                    this.guessResolution;
+                catch me
+                    this.CurrentFilepath = [];
+                    this.CurrentImage =[];
+                    this.TextBBoxes = [];
+                    this.DotsPerPoint = [];
+                    this.notifyFileCompleted('Invalid image file: %s', filepath);
+                end
             end
             if ~isempty(this.app)
                 this.app.EmptyFilePathLabel.Text = this.CurrentFilepath;
