@@ -6,7 +6,10 @@ function this = binarizeCurrentImage(this)
     % Remove objects that have too many pixels to be connected regions of text
     I = ~bwareaopen(I,this.AdjBigSizeThreshold);  
     % Remove small objects
-    I = ~bwareaopen(I,this.AdjSmallSizeThreshold);   
+    % TODO: Examine how bwareaopen eliminates diacritical marks
+    % that it should not.
+    %I = ~bwareaopen(I,this.AdjSmallSizeThreshold);   
+    I = ~I;
 
     this.CurrentBWImage = ~I;
     showBinarizedImage(this);
